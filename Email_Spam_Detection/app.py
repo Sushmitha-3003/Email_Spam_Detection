@@ -2,7 +2,9 @@ import streamlit as st
 import joblib
 
 # Load model
-model = joblib.load('spam_model.pkl')
+import os
+model = joblib.load(os.path.join(os.path.dirname(__file__), 'spam_model.pkl'))
+
 
 # Streamlit UI
 st.set_page_config(page_title="Spam Email Classifier", layout="centered")
